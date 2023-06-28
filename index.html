@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8144f645ff.js" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+
+</head>
+<body>
+
+    
+    <h1>Calculator</h1>
+
+    <div class="container">
+
+        <div class="main">
+            <div type="text"  id="display"> </div>
+        
+                <div class="buttons">
+                    <button onclick='calc(1)'>1</button>
+                    <button onclick='calc(2)'>2</button>
+                    <button onclick='calc(3)'>3</button>
+                    <button onclick='calc("+")'>+</button>
+                    <button onclick='calc(4)'>4</button>
+                    <button onclick='calc(5)'>5</button>
+                    <button onclick='calc(6)'>6</button>
+                    <button onclick='calc("-")'>-</button>
+                    <button onclick='calc(7)'>7</button>
+                    <button onclick='calc(8)'>8</button>
+                    <button onclick='calc(9)'>9</button>
+                    <button onclick='calc("*")'>*</button>
+                    <button onclick='del()'><i class="fa-sharp fa-solid fa-delete-left fa-beat"></i></button>
+                    <button onclick='calc(0)'>0</button>
+                    <button onclick='calc(".")'>.</button>
+                    <button onclick='calc("/")'>/</button>
+                    <button onclick='clr()' id="btn">Clear</button>
+                    <button onclick='calculate()' id="btn">=</button>
+                </div>
+        </div>
+    </div>
+
+    <script>
+
+        var button = document.getElementById("display");
+
+        function calc(number){
+            button.innerHTML = button.innerHTML + number; 
+        }
+
+        function clr(){
+            button.innerHTML  = "";
+        }
+        function calculate(){
+            button.innerHTML = eval(button.innerHTML)
+        }
+        function del(){
+            button.innerHTML=  button.innerHTML.slice(0,-1)
+        }
+    </script>
+</body>
+</html>
